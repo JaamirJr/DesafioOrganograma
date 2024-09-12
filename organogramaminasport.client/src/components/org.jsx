@@ -58,8 +58,9 @@ const Org = () => {
         <>
             <div className="header-container">
                 <select className="org-select" value={selectedOption} onChange={handleOptionChange}>
-                    <option value="hibrido">Padronizado</option>
+                    <option value="hibrido">Hibrido</option>
                     <option value="setorial">Setorial</option>
+                    <option value="pessoal">Pessoal</option>
                 </select>
                 <h1 className="title">Organograma Minas Port</h1>
             </div>
