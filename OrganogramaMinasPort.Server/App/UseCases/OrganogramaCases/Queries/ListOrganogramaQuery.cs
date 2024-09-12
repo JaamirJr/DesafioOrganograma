@@ -14,7 +14,7 @@ namespace OrganogramaMinasPort.Server.App.UseCases.OrganogramaCases.Queries
         //    _mapper = mapper;
         //}
 
-        public Task<List<OrganogramaResponse>> Execute()
+        public Task<List<OrganogramaResponse>> Execute(string tipo)
         {
             // Aqui faria a implementação do List do Organograma, buscando os dados da camada de Infraestrura;
 

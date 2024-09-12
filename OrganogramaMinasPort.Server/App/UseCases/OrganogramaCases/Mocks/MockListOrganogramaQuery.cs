@@ -6,7 +6,20 @@ namespace OrganogramaMinasPort.Server.App.UseCases.OrganogramaCases.Mocks
 {
     public class MockListOrganogramaQuery : IListOrganogramaQuery
     {
-        public async Task<List<OrganogramaResponse>> Execute()
+        public async Task<List<OrganogramaResponse>> Execute(string tipo)
+        {
+            List<OrganogramaResponse> organogramas = new List<OrganogramaResponse>();
+            
+            if (tipo == "setorial")
+                organogramas = OrganogramaSetorial();
+
+            if (tipo == "hibrido")
+                organogramas = OrganogramaHibrido();
+
+            return await Task.FromResult(organogramas);
+        }
+
+        private List<OrganogramaResponse> OrganogramaHibrido()
         {
             List<Employee> employees = new List<Employee>
             {
@@ -392,8 +405,111 @@ namespace OrganogramaMinasPort.Server.App.UseCases.OrganogramaCases.Mocks
             };
 
             List<OrganogramaResponse> organogramas = CreateOrganogramaResponse(employees, teams, hierarchies);
+            return organogramas;
+        }
 
-            return await Task.FromResult(organogramas);
+        private List<OrganogramaResponse> OrganogramaSetorial()
+        {
+            List<Team> teams = new List<Team>
+            {
+                new Team
+                {
+                    Id = 1,
+                    Name = "Diretoria",
+                    Description = "Diretoria da Empresa"
+                },
+                new Team
+                {
+                    Id = 2,
+                    Name = "Comercial",
+                    Description = "Equipe do Setor Comercial"
+                },
+                new Team
+                {
+                    Id = 3,
+                    Name = "Operações",
+                    Description = "Equipe de Operações"
+                },
+                new Team
+                {
+                    Id = 4,
+                    Name = "Administrativo",
+                    Description = "Equipe Administrativa"
+                },
+                new Team
+                {
+                    Id = 5,
+                    Name = "Vendas",
+                    Description = "Equipe de Vendas"
+                },
+                new Team
+                {
+                    Id = 6,
+                    Name = "Marketing",
+                    Description = "Equipe de Marketing"
+                },
+                new Team
+                {
+                    Id = 7,
+                    Name = "Compras",
+                    Description = "Equipe de Compras"
+                },
+                new Team
+                {
+                    Id = 8,
+                    Name = "Produção",
+                    Description = "Equipe de Desenvolvimento de Produtos"
+                },
+                new Team
+                {
+                    Id = 9,
+                    Name = "TI",
+                    Description = "Equipe de Tecnologia da Informação"
+                },
+                new Team
+                {
+                    Id = 10,
+                    Name = "Logística",
+                    Description = "Equipe de Logística"
+                },
+                new Team
+                {
+                    Id = 11,
+                    Name = "Financeiro",
+                    Description = "Equipe do Financeiro"
+                },
+                new Team
+                {
+                    Id = 12,
+                    Name = "RH",
+                    Description = "Equipe de Recursos Humanos"
+                },
+                new Team
+                {
+                    Id = 13,
+                    Name = "Contabilidade",
+                    Description = "Equipe Contábil"
+                }
+            };
+
+            List<Hierarchy> hierarchies = new List<Hierarchy>
+            {
+                new Hierarchy {Id = 1, TeamId = 2, ParentId = "1"},
+                new Hierarchy {Id = 2, TeamId = 3, ParentId = "1"},
+                new Hierarchy {Id = 3, TeamId = 4, ParentId = "1"},
+                new Hierarchy {Id = 4, TeamId = 5, ParentId = "2"},
+                new Hierarchy {Id = 5, TeamId = 6, ParentId = "2"},
+                new Hierarchy {Id = 6, TeamId = 7, ParentId = "2"},
+                new Hierarchy {Id = 7, TeamId = 8, ParentId = "3"},
+                new Hierarchy {Id = 8, TeamId = 9, ParentId = "3"},
+                new Hierarchy {Id = 9, TeamId = 10, ParentId = "3"},
+                new Hierarchy {Id = 10, TeamId = 11, ParentId = "4"},
+                new Hierarchy {Id = 11, TeamId = 12, ParentId = "4"},
+                new Hierarchy {Id = 12, TeamId = 13, ParentId = "4"},
+            };
+
+            List<OrganogramaResponse> organogramas = CreateOrganogramaResponse(new List<Employee>(), teams, hierarchies);
+            return organogramas;
         }
 
         private List<OrganogramaResponse> CreateOrganogramaResponse(List<Employee> employees, List<Team> teams, List<Hierarchy> hierarchies)

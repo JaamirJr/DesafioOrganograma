@@ -28,16 +28,17 @@ const CustomNodeContent = (props) => {
                     ) : (
                         <div className="node-team">
                             <div className="node-team-name">{props.data.team}</div>
-                            {props._children !== null &&
+                            {(props._children !== null && props._children !== undefined) &&
                                 props._children
                                     .slice(0, 4)
                                     .map((child) => (
+                                        child.data.imageUrl ?
                                         <img
                                             key={child.data.id}
                                             className="node-team-member-img"
                                             src={child.data.imageUrl}
                                             alt="team member"
-                                        />
+                                        /> : null
                                     ))}
                         </div>
                     )}

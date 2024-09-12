@@ -14,10 +14,10 @@ namespace OrganogramaMinasPort.Server.Controllers
             _listOrganogramaQuery = listOrganogramaQuery;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("{tipo}")]
+        public async Task<IActionResult> Get(string tipo)
         {
-            return Ok(await _listOrganogramaQuery.Execute());
+            return Ok(await _listOrganogramaQuery.Execute(tipo));
         }
     }
 }
