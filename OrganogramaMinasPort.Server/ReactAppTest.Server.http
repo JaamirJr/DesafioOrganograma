@@ -1,0 +1,6 @@
+@ReactAppTest.Server_HostAddress = http://localhost:5069
+
+GET {{ReactAppTest.Server_HostAddress}}/organograma/
+Accept: application/json
+
+###

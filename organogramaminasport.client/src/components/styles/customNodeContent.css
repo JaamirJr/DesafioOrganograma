@@ -1,0 +1,79 @@
+.node-container {
+    min-height: 150px;
+    background-color: #40403A;
+    color: #227c9d;
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.node-details {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.node-content {
+    display: flex;
+    align-items: center;
+}
+
+.node-team {
+    width: 100%;
+    text-align: center;
+}
+
+.node-team-name {
+    margin-bottom: 0.5rem;
+    color: #9BA649;
+    font-size: 1.5rem;
+}
+
+.node-team-member-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0.2rem;
+}
+
+.node-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 1rem;
+}
+
+.node-info {
+    margin-left: 1.5rem;
+    color: #fef9ef;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.node-name {
+    padding-bottom: 0.3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #C6D936;
+}
+
+.node-role {
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.node-department {
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: #F2F2F2;
+    border-radius: 1rem;
+    color: #40403A;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}

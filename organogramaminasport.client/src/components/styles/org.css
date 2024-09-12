@@ -1,0 +1,38 @@
+.org-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.org-container * {
+    margin: 0;
+    padding: 0;
+}
+
+.error-message, .loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+    background-color: #fff; 
+    color: #333; 
+    font-size: 2em;
+    font-weight: bold; 
+    text-align: center;
+}
+
+.title {
+    background-color: #40403A;
+    color: #C9D955;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5em;
+    margin: 0;
+    border: 2px solid #40403A;
+    border-radius: 1%;
+}
+

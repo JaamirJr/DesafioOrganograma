@@ -1,0 +1,17 @@
+.expand-btn {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    color: #03783e;
+    background-color: #fef9ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #d3d3d3;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+}
